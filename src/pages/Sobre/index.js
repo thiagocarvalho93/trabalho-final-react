@@ -4,7 +4,6 @@ const Sobre = () => {
     return(
         <>
          <h1>Sobre Nós</h1>
-        <Link to="/home">Para Home</Link>
         </>
     )
 }

@@ -4,7 +4,7 @@ const Contato = () => {
     return(
         <>
          <h1>Contato</h1>
-        <Link to="/home">Para Home</Link>
+
         </>
     )
 }
