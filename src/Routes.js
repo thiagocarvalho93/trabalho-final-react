@@ -7,11 +7,13 @@ import Login from './pages/Login';
 import Produto from './pages/Produto';
 import Sobre from './pages/Sobre';
 import Cart from './pages/Cart';
+import Footer from './components/Footer';
+import Navbar from './components/Navbar';
 
 const Rotas = () => {
     return(
         <BrowserRouter>
-                 <h1>Tegloja</h1>
+             <Navbar/>   
         <Routes>
             <Route path='/cadastro' element={<Cadastro />} />
             <Route path='/contato' element={<Contato />} />
@@ -22,6 +24,7 @@ const Rotas = () => {
             <Route path='/login' element={<Login />} />
             <Route path='*' element={<Navigate to='/' />} />
         </Routes>
+        <Footer/>
     </BrowserRouter>
     )
  

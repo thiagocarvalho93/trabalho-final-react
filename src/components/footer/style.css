@@ -1,0 +1,46 @@
+.social{
+    stroke:#000;
+
+    stroke-width:2;
+    stroke-linecap:round;
+    stroke-linejoin:round ;
+}
+
+.socialSVG{
+    width:30px;
+    height:30px;
+    fill:white
+}
+
+
+.socialSVG.you :hover{
+    fill:rgb(170, 31, 31);
+    transition-duration: 500ms ;
+}
+.socialSVG.face :hover{
+    fill:rgb(77, 152, 202);
+    transition-duration: 500ms ;
+}
+.socialSVG.insta :hover{
+    fill:rgb(199, 178, 87);
+    transition-duration: 500ms ;
+}
+
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+  }
+  svg {
+    font-size: 30px;
+    margin-left: 30px;
+
+  }
+ 
+
+  .footer-center {
+    display: flex;
+    justify-content: center;
+    margin-block: 0.7rem;
+  }
