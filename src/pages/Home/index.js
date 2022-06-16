@@ -1,10 +1,11 @@
-import { Carousel } from "react-bootstrap";
+import Carrocel from "./Components/Carrocel";
+
 
 const Home = () => {
     return(
         <>
           <h1>Home</h1>
-          <Carousel/>
+          <Carrocel/>
         </>
     )
 }

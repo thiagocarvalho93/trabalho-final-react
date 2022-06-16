@@ -1,4 +1,4 @@
-const Carousel = () => {
+const Carrocel = () => {
     return(
         <>
           <h1>Carousel vai aqui</h1>
@@ -6,4 +6,4 @@ const Carousel = () => {
     )
 }
 
-export default Carousel;
+export default Carrocel;
