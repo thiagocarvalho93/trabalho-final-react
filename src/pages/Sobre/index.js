@@ -1,12 +1,12 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 
-const Contato = () => {
+const Sobre = () => {
     return(
         <>
-         <h1>Contato</h1>
+         <h1>Sobre Nós</h1>
         <Link to="/home">Para Home</Link>
         </>
     )
 }
 
-export default Contato;
+export default Sobre;
