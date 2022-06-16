@@ -19,7 +19,7 @@ div{
     fill:rgb(170, 31, 31);
     transition-duration: 500ms ;
     transform: scale(1.3);
-    transform-origin: 10%;
+    transform-origin: 11%;
 }
 .socialSVG.face :hover{
     fill:rgb(77, 152, 202);
@@ -33,7 +33,7 @@ div{
     width: 50px;
     transition-duration: 500ms ;
     transform: scale(1.3);
-    transform-origin: 10%;
+    transform-origin: 0%;
 }
 path{
     height: 50px;

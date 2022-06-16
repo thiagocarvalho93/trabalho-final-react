@@ -1,0 +1,16 @@
+a{
+   text-decoration: none;
+   display: block;
+   height: 5vh;
+   color: white;
+}
+.container-fluid{
+   display: flex;
+   justify-content: space-around;
+   --bs-bg-opacity: 1;
+   background-color: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important;
+}
+
+a:hover{
+   background-color:grey;
+}
