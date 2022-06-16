@@ -11,6 +11,6 @@ a{
    background-color: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important;
 }
 
-a:hover{
+.container-fluid a:hover{
    background-color:grey;
 }

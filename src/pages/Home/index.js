@@ -1,11 +1,11 @@
-import Carrocel from "./Components/Carrocel";
 
-
+import 'bootstrap/dist/css/bootstrap.min.css' 
+import React from 'react'
 const Home = () => {
     return(
         <>
           <h1>Home</h1>
-          <Carrocel/>
+
         </>
     )
 }
