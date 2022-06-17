@@ -1,7 +1,9 @@
+import CadastroCliente from "./Components/CadastroCliente";
+
 const Cadastro = () => {
     return(
         <>
-         <h1>Cadastro</h1>
+         <CadastroCliente/>
         </>
     )
 }

@@ -6,13 +6,13 @@ const Navbar = () => {
         <>
     
         <nav className="container-fluid">Menu
-        <Link to="/home">Para Home</Link>
-        <Link to="/produto">Para Produtos</Link>
-        <Link to="/contato">Para Contato</Link>
-        <Link to="/sobre">Para Sobre</Link>
-        <Link to="/cadastro">Para Cadastro</Link>
-        <Link to="/login">Para Login</Link>
-        <Link to="/carrinho">Para Carrinho</Link>
+        <Link to="/home"> Home</Link>
+        <Link to="/produto"> Produtos</Link>
+        <Link to="/contato"> Contato</Link>
+        <Link to="/sobre"> Sobre</Link>
+        <Link to="/cadastro"> Cadastro</Link>
+        <Link to="/login"> Login</Link>
+        <Link to="/carrinho"> Carrinho</Link>
         </nav>
 
         

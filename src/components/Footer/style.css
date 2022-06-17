@@ -43,6 +43,7 @@ path{
 footer {
     position: fixed;
     bottom: 0;
+    height: 6vh;
     width: 100vw;
   }
   svg {
