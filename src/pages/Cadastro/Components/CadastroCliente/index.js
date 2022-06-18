@@ -4,8 +4,14 @@ import axios from 'axios';
 import './styles.css'
 const CadastroCliente = () => {
 
-    const [data, setData] = useState([])
+
+    const [nome, setNome] = useState("")
+    const [email, setEmail] = useState("")
+    const [senha, setSenha] = useState("")
+    const [cpf, setCpf] = useState("")
     const [endereco, setEndereco] = useState([])
+    const [numeroEndereco, setNumeroEndereco] = useState("")
+    const [complemento, setComplemento] = useState("")
 
     const getCep = async (cep) => {
         if (cep === undefined || cep.length <= 0) {
@@ -30,9 +36,9 @@ const CadastroCliente = () => {
         return true
     }
     function check() {
-        let nome = data.nome;
-        let email = data.email;
-        let senha1 = data.senha;
+        let nome = nome;
+        let email = email;
+        let senha1 = senha;
         let senha2 = document.querySelector("#senha2").value;
 
         if (
@@ -63,74 +69,91 @@ const CadastroCliente = () => {
         }
     }
 
-    const handleForm = () => {
-        setData(data)
-        console.log(data);
+    const handleForm = async() => {
+
+            if(nome === "" || email === "" ||cpf ==="") return
+            const novoCadastro = [{
+             
+              nome: nome,
+              cpf: cpf,
+              email: email,
+
+            },
+        endereco]
+        console.log(novoCadastro);
     }
 
     return (
         <>
-            <main className="container mb-6 pb-5">
+            <main className="container ">
 
-                <form className="formulario">
 
-                    <h3>Informe seu melhor cadastro!</h3>
+                <form className="mt-4 shadow p-3 mb-5 bg-body rounded-3">
 
-                    <div className="field">
-                        <label>  Nome:<input type="text" id="nome" name="nome" placeholder="Digite seu nome" required /><br /><span
-                            className="obrigatorio" value={data.nome} onChange={(e) => setData(e.target.value)} > * campo obrigatório</span>
-                        </label>
+                    <h3 className='text-center'>Informe seu melhor cadastro!</h3>
+                    <div className="row g-3 mt-2 mb-6">
+                        <div className='col-md-6 '>
+                            <label >  Nome:
+                                <input type="text" className="form-control" id="nome" name="nome" placeholder="Digite seu nome" required value={nome} onChange={(e) => setNome(e.target.value)} />
+
+                                <span className="obrigatorio" > * </span>
+
+                                Email:
+                                <input type="email" className="form-control" id="emailCadastro" name="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Digite seu e-mail" />
+                                <span className="obrigatorio" > *  </span>
+                                Senha:
+
+                                <input type="password" className="form-control" id="senha1" name="password" placeholder="Digite sua senha" value={senha} onChange={(e) => setSenha(e.target.value)} />
+
+                                <span className="obrigatorio"> *  </span>
+
+                                Repita:
+                                <input onBlur={validarSenha} className="form-control" type="password" id="senha2" name="password"
+                                    placeholder="Repita a sua senha" /><span className="obrigatorio"> *  </span>
+
+                                Cpf:
+                                <input type="text" className="form-control" id="cpf" name="cpfo" value={cpf} onChange={(e) => setCpf(e.target.value)} />
+                            </label>
+                        </div>
+                        
+                        <div className='col-md-6'>
+                            <div className="Endereco">
+                                <label>
+
+                                    Cep:
+                                    <input type="text" id="cep" className="form-control" name="cep" placeholder="buscar cep :)" onChange={(e) => setEndereco(e.target.value)} value={endereco.cep} onBlur={handleBlur} />
+
+                                    Numero: <span className='spanUF'>UF:</span> <span className='spanCidade'>Cidade:</span>
+                                    <div className='d-flex '>
+                                        <input type="text" className="form-control" id="numeroEndereco" name="numero" placeholder="nº" value={numeroEndereco} onChange={(e) => setNumeroEndereco(e.target.value)} />
+
+
+                                        <input type="text" className="form-control" id="uf" name="uf" disabled value={endereco.uf}  />
+
+                                        <input type="text" className="form-control" id="cidade" name="cidade" disabled value={endereco.cidade} />
+                                    </div>
+
+                                    Complemento :
+                                    <input type="text" id="complemento" className="form-control" name="complemento" placeholder="Complemento caso houver" value={complemento} onChange={(e) => setComplemento(e.target.value)} />
+
+                                    Logradouro:
+                                    <input type="text" className="form-control" id="logradouro" name="cep" placeholder="Rua|Avenida|etc" disabled value={endereco.logradouro} />
+
+                                    Bairro:
+                                    <input type="text" className="form-control" id="bairro" name="bairro" disabled value={endereco.bairro} />
+
+
+                                </label>
+                            </div>
+                        </div>
+
                     </div>
-
-                    <div className="field">
-                        <label> Email: <input type="email" id="emailCadastro" name="email" placeholder="Digite seu e-mail" />
-                            <br /><span className="obrigatorio" value={data.email} onChange={(e) => setData(e.target.value)} > * campo obrigatório</span>
-                        </label>
-                    </div>
-
-                    <div className="field">
-                        <label> Senha: <input type="password" id="senha1" name="password" placeholder="Digite sua senha" /><br /><span
-                            className="obrigatorio" value={data.senha} onChange={(e) => setData(e.target.value)} > * campo obrigatório</span>
-                        </label>
-                    </div>
-
-                    <div className="field">
-                        <label>  Repita:  <input onBlur={validarSenha} type="password" id="senha2" name="password"
-                            placeholder="Repita a sua senha" /><br /><span className="obrigatorio"> * campo obrigatório</span>
-                        </label>
-                    </div>
-
-                    <div className="field">
-                        <label>Data de nascimento: <input type="date" id="datanascimento" name="Data de nascimento" value={data.nascimento} onChange={(e) => setData(e.target.value)} /> </label>
-                    </div>
-
-                    <div className="Endereco">
-                        <label> Endereço:<br />
-                            cep:
-
-                            <input type="text" id="cep" name="cep" placeholder="buscar cep :)" onChange={(e) => setEndereco(e.target.value)} value={endereco.cep} onBlur={handleBlur} />
-                            Complemento : <input type="text" id="complemento" name="complemento" placeholder="Complemento caso houver" value={data.complemento} onChange={(e) => setData(e.target.value)} />
-                            Numero: <input type="text" id="numeroEndereco" name="numero" placeholder="seu numero aqui" value={data.numeroEndereco} onChange={(e) => setData(e.target.value)} />
-                            Logradouro: <input type="text" id="logradouro" name="cep" placeholder="Rua|Avenida|etc" disabled value={endereco.logradouro} />
-                            UF: <input type="text" id="uf" name="uf" disabled value={endereco.uf} />
-                            Bairro: <input type="text" id="bairro" name="bairro" disabled value={endereco.bairro} />
-                            Cidade: <input type="text" id="cidade" name="cidade" disabled value={endereco.cidade} />
-
-                        </label>
-                    </div>
-                    <br />
-                    <input type="button" value="Enviar" className="btn btn-primary submit" id="cadastro" name="Enviar Formulário" onClick={console.log(data)} />
-
-                    <div className="field">
-                        <label> <input type="checkbox" name="novidades" id="sim" defaultChecked /> Deseja receber nossas novidades?<br />
-
-                        </label>
-                    </div>
-
-
+                    <input type="button" value="Enviar" className="btn btn-primary submit mt-2" id="cadastro" name="Enviar Formulário" onClick={handleForm} />
+                    <label> <input type="checkbox" name="novidades" id="sim" defaultChecked /> Deseja receber nossas novidades?<br />
+                    </label>
                 </form>
 
-            </main>
+            </main >
         </>
     )
 }

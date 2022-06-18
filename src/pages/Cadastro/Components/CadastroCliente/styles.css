@@ -3,84 +3,30 @@ body {
     width: 100%;
     background-color: rgb(219, 219, 219);
   }
-  
-  span {
-    flex-direction: row-reverse;
-    color: black;
-    font-size: smaller;
-    font-style: italic;
-  }
-  
-  .formulario {
-    font-size: 0.85rem;
-    background-color: rgb(252, 252, 252);
-    margin-top: 1.25rem;
-    margin-inline: auto;
-    max-width: 50vh;
-    min-width: 30vh;
-    padding-inline: 1rem;
-    padding-block: 1rem;
-    border-radius: 0.5rem;
-    box-shadow: 4px 6px 12px -4px;
-  }
-  
+
   h3 {
     color: var(--primary-color);
   }
-  
-  .formulario p {
-    width: 50%;
-    font-size: 1em;
+.form-control{
+  width: 20rem;
+  min-width: 16%;
+  margin-bottom: 0.5rem;
+}
+#cidade{
+  width: 11rem;
+}
+  #uf{
+    width: 3rem;
   }
-  
-  .field {
-    width: 100%;
-    margin: 0.5rem 0;
+  .spanUF{
+    margin-left: 1.2rem
   }
-  
-  .field label,
-  .field span {
-    display: flex;
-    width: 100%;
+  .spanCidade{
+    margin-left: 2.5rem
   }
-  
-  .radiobox label {
-    width: auto;
-    display: inline-block;
-  }
-  
-  input[type="text"],
-  input[type="email"],
-  input[type="password"],
-  textarea {
-    width: 100%;
-    padding-left: 10px;
-    height: 30px;
-    line-height: 30px;
-    border-radius: 15px;
-    border: 1px solid #ccc;
-    outline: none;
-  }
-  
-  input[type="date"],
-  textarea {
-    width: 50%;
-    padding-left: 10px;
-    height: 30px;
-    line-height: 30px;
-    border-radius: 15px;
-    border: 1px solid #ccc;
-    outline: none;
-  }
-  
-  input[type="number"] {
-    width: 10%;
-    padding-left: 10px;
-    height: 30px;
-    line-height: 30px;
-    border-radius: 15px;
-    border: 1px solid #ccc;
-    outline: none;
+
+  #numeroEndereco{
+    width: 4rem;
   }
   
   input {
@@ -97,6 +43,7 @@ body {
   }
   
   #cadastro {
+    width: 50%;
     display: block;
     height: 35px;
     border: none;
