@@ -1,12 +1,14 @@
 import { useState } from "react"
+import Button from 'react-bootstrap/Button';
+import { FaSearch } from 'react-icons/fa';
 
 const Pesquisa = ({pegarNome}) => {
-    const [nomeProduto, setNomeProduto] = useState("")
+    const [produto, setProduto] = useState("")
 
     return(
         <div>
-            <input type="text" placeholder="Buscar produto" value={nomeProduto} onChange={(e) => setNomeProduto(e.target.value)}/>
-            <button onClick={pegarNome(nomeProduto)}>Pesquisar</button>
+            <input className="rounded m-0 mb-3" type="text" placeholder="Buscar produto" value={produto} onChange={(e) => setProduto(e.target.value)}/>
+            <Button className="mb-3 p-2" variant="primary" onClick={() => pegarNome(produto)}>Pesquisar<FaSearch /></Button>
         </div>
     )
 }

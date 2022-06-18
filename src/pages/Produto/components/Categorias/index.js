@@ -30,9 +30,8 @@ const Categorias = ({pegaCategoria}) => {
     }
 
     return(
-        <div>
-          Categoria
-          <select onChange={handleChange}>
+        <div className="col-2">
+          <select className="form-select" onChange={handleChange}>
           {categorias.map((categoria) => <option key={categoria.id} value={categoria.categoria}>{categoria.categoria}</option>)}
           </select>
         </div>
