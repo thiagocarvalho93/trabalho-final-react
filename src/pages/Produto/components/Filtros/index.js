@@ -2,7 +2,6 @@ import { useState } from "react"
 import Button from 'react-bootstrap/Button';
 import { FaDollarSign, FaFilter } from "react-icons/fa";
 
-
 const Filtros = ({pegaPrecoMax, maiorPreco}) => {
 
     const [preco, setPreco] = useState(500)

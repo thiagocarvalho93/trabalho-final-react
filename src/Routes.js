@@ -8,6 +8,7 @@ import Sobre from './pages/Sobre';
 import Cart from './pages/Cart';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
+import PainelProduto from './pages/PainelProduto';
 
 const Rotas = () => {
     return(
@@ -21,6 +22,7 @@ const Rotas = () => {
             <Route path='/produto' element={<Produto />} />
             <Route path='/sobre' element={<Sobre />} />
             <Route path='/login' element={<Login />} />
+            <Route path='/painelproduto' element={<PainelProduto />} />
             <Route path='*' element={<Navigate to='/' />} />
         </Routes>
         <Footer/>
