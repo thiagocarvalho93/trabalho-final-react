@@ -58,11 +58,14 @@ const Produto = () => {
     const pegaCategoria = (opcao) => {
         setCategoria(opcao);
     }
+    const pegaCategoriaId = (opcao) => {
+        setCategoria(opcao);
+    }
 
     return(
         <>
             <div className='ms-3 mt-3'>
-                <Categorias pegaCategoria={pegaCategoria}/>
+                <Categorias pegaCategoria={pegaCategoria} pegaCategoriaId={pegaCategoriaId}/>
             </div>
             <hr />
             <div className="m-3 row">
