@@ -69,17 +69,17 @@ const CadastroCliente = () => {
         }
     }
 
-    const handleForm = async() => {
+    const handleForm = async () => {
 
-            if(nome === "" || email === "" ||cpf ==="") return
-            const novoCadastro = [{
-             
-              nome: nome,
-              cpf: cpf,
-              email: email,
+        if (nome === "" || email === "" || cpf === "") return
+        const novoCadastro = [{
 
-            },
-        endereco]
+            nome: nome,
+            cpf: cpf,
+            email: email,
+
+        },
+            endereco]
         console.log(novoCadastro);
     }
 
@@ -115,7 +115,7 @@ const CadastroCliente = () => {
                                 <input type="text" className="form-control" id="cpf" name="cpfo" value={cpf} onChange={(e) => setCpf(e.target.value)} />
                             </label>
                         </div>
-                        
+
                         <div className='col-md-6'>
                             <div className="Endereco">
                                 <label>
@@ -128,7 +128,7 @@ const CadastroCliente = () => {
                                         <input type="text" className="form-control" id="numeroEndereco" name="numero" placeholder="nº" value={numeroEndereco} onChange={(e) => setNumeroEndereco(e.target.value)} />
 
 
-                                        <input type="text" className="form-control" id="uf" name="uf" disabled value={endereco.uf}  />
+                                        <input type="text" className="form-control" id="uf" name="uf" disabled value={endereco.uf} />
 
                                         <input type="text" className="form-control" id="cidade" name="cidade" disabled value={endereco.cidade} />
                                     </div>

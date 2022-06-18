@@ -58,6 +58,9 @@ const Produto = () => {
     const pegaCategoria = (opcao) => {
         setCategoria(opcao);
     }
+    const pegaCategoriaId = (opcao) => {
+        setCategoria(opcao);
+    }
 
     return(
         <>

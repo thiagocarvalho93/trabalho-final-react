@@ -1,0 +1,27 @@
+.icones{
+    width: 8.5rem;
+    height: 5rem;
+    
+}
+.icones:hover{
+    transition: 300ms;
+    fill: rgb(100, 16, 100);
+}
+
+.btnn{
+    border: none;
+    background-color: var(--bg-color);
+    padding-left: 5px;
+    
+}
+
+.btnn:hover{
+   
+   transform: scale(1.1);
+   transition: 300ms;
+   box-shadow: 1px 1px 3px 3px rgb(100, 16, 100) ;
+}
+
+.card{
+    border: 2px 2px rgb(100, 16, 100);
+}
