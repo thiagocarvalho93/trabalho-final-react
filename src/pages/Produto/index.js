@@ -6,6 +6,7 @@ import Filtros from './components/Filtros';
 import Pesquisa from './components/Pesquisa';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
 
 const Produto = () => {
 
@@ -66,7 +67,9 @@ const Produto = () => {
         <>
             <div className='ms-3 mt-3'>
                 <Categorias pegaCategoria={pegaCategoria}/>
-                <Link to="/painelproduto"> Painel de admnistração</Link>
+                <Link to="/painelproduto"> 
+                    <Button variant="outline-primary" className="mb-3">Painel</Button>
+                </Link>
             </div>
             <hr />
             <div className="m-3 row">
