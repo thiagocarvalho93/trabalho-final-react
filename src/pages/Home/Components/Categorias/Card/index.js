@@ -1,5 +1,8 @@
 import { FaXbox, FaMicrosoft, FaPlaystation, FaSteam, FaAndroid, FaApple, FaMouse } from "react-icons/fa"
 import { SiNintendoswitch } from "react-icons/si"
+import { BsFillCpuFill,BsLaptop } from "react-icons/bs"
+import { MdMonitor } from "react-icons/md"
+import { GiOfficeChair } from "react-icons/gi"
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom"
 
 const Card = (categoria) => {
@@ -21,9 +24,17 @@ const Card = (categoria) => {
             case 6:
                 return <><FaMouse className="icones me-2" /></>
             case 7:
-                return <><FaSteam className="icones me-2" /></>
-            case 8:
                 return <><SiNintendoswitch className="icones me-2" /></>
+            case 8:
+                return <><FaSteam  className="icones me-2" /></>
+            case 9:
+                return <><GiOfficeChair  className="icones me-2" /></>
+            case 10:
+                return <><BsLaptop  className="icones me-2" /></>
+            case 11:
+                return <><MdMonitor  className="icones me-2" /></>
+            case 12:
+                return <><BsFillCpuFill  className="icones me-2" /></>
 
             default:
                 return 'vazio'
