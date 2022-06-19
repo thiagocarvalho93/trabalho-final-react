@@ -11,7 +11,7 @@ const Filtros = ({pegaPrecoMax, maiorPreco}) => {
             <h4 className="mb-3"><FaFilter />Filtros</h4>
             <div>
                 <p className="mb-0"><FaDollarSign />Preço máximo</p>
-                <input type="range" min="0" max="500" value={preco} onChange={(e) => setPreco(e.target.value)}/>
+                <input type="range" min="0" max="5000" value={preco} onChange={(e) => setPreco(e.target.value)}/>
             </div>
             <div>
                 <p>R$ {preco}</p>
