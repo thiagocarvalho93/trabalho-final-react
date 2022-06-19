@@ -1,0 +1,75 @@
+body {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(219, 219, 219);
+  }
+
+  h3 {
+    color: var(--primary-color);
+  }
+.form-control{
+  width: 20rem;
+  min-width: 16%;
+  margin-bottom: 0.5rem;
+}
+#cidade{
+  width: 11rem;
+}
+  #uf{
+    width: 3rem;
+  }
+  .spanUF{
+    margin-left: 1.2rem
+  }
+  .spanCidade{
+    margin-left: 2.5rem
+  }
+
+  #numeroEndereco{
+    width: 4rem;
+  }
+  
+  input {
+    margin-top: 0.2rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  
+  textarea {
+    line-height: 20px;
+    padding: 10px;
+    height: 90px;
+    resize: none;
+  }
+  
+  #cadastro {
+    width: 50%;
+    display: block;
+    height: 35px;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 15px;
+  }
+  
+  div.Satisfacao {
+    margin-bottom: 1rem;
+  }
+  
+  .navbar-brand:hover {
+    opacity: 0.3;
+  }
+  
+  .submit {
+    width: 10rem;
+  }
+  
+.novidades{
+    margin-left: 3px;
+  }
+
+  .dados1{
+    display: flex;
+  }

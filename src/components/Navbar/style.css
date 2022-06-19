@@ -3,6 +3,8 @@ a{
    display: block;
    height: 5vh;
    color: white;
+   text-align: center;
+   width: 5rem;
 }
 .container-fluid{
    display: flex;
@@ -13,4 +15,5 @@ a{
 
 .container-fluid a:hover{
    background-color:grey;
+   color: white;
 }

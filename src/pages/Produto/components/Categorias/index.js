@@ -1,16 +1,15 @@
 import { useState, useEffect } from "react";
 import './index.css'
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
-const Categorias = () => {
+const Categorias = ({pegaCategoria}) => {
     
     const [categorias, setCategorias] = useState([])
-    const [atualizar, setAtualizar] = useState(false)
     const [loading, setLoading] = useState(false)
-
+    
     const getCategorias = async () => {
         setLoading(true)
-        
         try{
           const { data } = await axios.get('https://teg-store-api.herokuapp.com/tegloja/categorias')
           setCategorias(data)
@@ -21,16 +20,21 @@ const Categorias = () => {
         }
       }
 
-      // Para funcionar na primeira vez
-      useEffect(() => {
-        getCategorias();
-      },[])
-      // categorias.map((categoria, index) => <li key={index}>{categoria}</li>)
+    // Para funcionar na primeira vez
+    useEffect(() => {
+      getCategorias();
+    },[])
+
+    const handleChange = (e) => {
+      pegaCategoria(e.target.value)
+    }
 
     return(
-        <>
-            {categorias.map((categoria, index) => <li key={index}>{categoria.categoria}</li>)}
-        </>
+        <div className="col-2">
+          <select className="form-select" onChange={handleChange}>
+          {categorias.map((categoria) => <option key={categoria.id} value={categoria.categoria}>{categoria.categoria}</option>)}
+          </select>
+        </div>
     )
 
 }
