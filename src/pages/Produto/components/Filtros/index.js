@@ -15,7 +15,7 @@ const Filtros = ({pegaPrecoMax, maiorPreco}) => {
             </div>
             <div>
                 <p>R$ {preco}</p>
-                <Button variant="primary" onClick={() => pegaPrecoMax(preco)}>Ok</Button>
+                <Button variant="primary" onClick={() => pegaPrecoMax(preco)}>Aplicar</Button>
             </div>
         </div>
     )

@@ -6,7 +6,7 @@ const CardProduto = ({precoProduto, nome}) => {
 
 
     return (
-        <div className="col-md-3 col-sm-4 d-flex align-items-stretch">
+        <div className="col col-md-4 col-sm-6 col-lg-3">
             <div className="card text-center bg-light">
                 <img src="./img/Acessorios/01.jpg" className="card-img-top" alt="..." />
                 <div className="card-header">

@@ -74,7 +74,6 @@ const Produto = () => {
             <hr />
             <div className="m-3 row">
                 <div className='container col-2 border border-dark rounded p-3 bg-dark text-white'>
-                    <Pesquisa pegarNome={pegaNomeProduto}/>
                     <Filtros pegaPrecoMax={pegaPrecoMax}/>
                 </div>
                 <div className='container col-9 border border-dark rounded p-3 bg-dark'>
