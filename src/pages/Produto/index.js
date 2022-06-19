@@ -5,6 +5,7 @@ import Categorias from "./components/Categorias";
 import Filtros from './components/Filtros';
 import Pesquisa from './components/Pesquisa';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Produto = () => {
 
@@ -30,7 +31,6 @@ const Produto = () => {
             //lança uma excessão 
             console.log(e)        
         }
-        
         setLoading(false)
       }
 
@@ -58,11 +58,15 @@ const Produto = () => {
     const pegaCategoria = (opcao) => {
         setCategoria(opcao);
     }
+    const pegaCategoriaId = (opcao) => {
+        setCategoria(opcao);
+    }
 
     return(
         <>
             <div className='ms-3 mt-3'>
                 <Categorias pegaCategoria={pegaCategoria}/>
+                <Link to="/painelproduto"> Painel de admnistração</Link>
             </div>
             <hr />
             <div className="m-3 row">
