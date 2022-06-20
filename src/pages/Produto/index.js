@@ -24,6 +24,7 @@ const Produto = () => {
         try{
             const { data } = await axios.get('https://teg-store-api.herokuapp.com/tegloja/produtos')
             setProdutos(data)
+            console.log(data);
             if(firstTime){
                 setProdutosFiltrados(data)
                 setFirstTime(false)
@@ -59,9 +60,7 @@ const Produto = () => {
     const pegaCategoria = (opcao) => {
         setCategoria(opcao);
     }
-    const pegaCategoriaId = (opcao) => {
-        setCategoria(opcao);
-    }
+
 
     return(
         <>
@@ -74,11 +73,12 @@ const Produto = () => {
             <hr />
             <div className="m-3 row">
                 <div className='container col-2 border border-dark rounded p-3 bg-dark text-white'>
+                    <Pesquisa pegarNome={pegaNomeProduto}/>
                     <Filtros pegaPrecoMax={pegaPrecoMax}/>
                 </div>
                 <div className='container col-9 border border-dark rounded p-3 bg-dark'>
                     <div className="row g-3">
-                        {produtosFiltrados.map((produto) => <CardProduto key={produto.idProduto} nome={produto.nomeProduto} precoProduto={produto.valorUnitario}/> )}
+                        {produtosFiltrados.map((produto) => <CardProduto key={produto.idProduto} nome={produto.nomeProduto} precoProduto={produto.valorUnitario} imagemProduto={produto.urlFoto}/> )}
                     </div>
                 </div>
             </div>

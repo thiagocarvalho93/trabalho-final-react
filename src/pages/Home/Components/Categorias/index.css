@@ -1,3 +1,4 @@
+
 .icones{
     width: 9rem;
     height: 6rem;
@@ -8,12 +9,13 @@
     border: none;
     background-color: var(--bg-color);
     /* padding-left: 5px; */
+
     
 }
 
 .cardHover:hover{
-   
-   transform: scale(1.1);
+    margin-right:2.5rem;
+   transform: scale(1.05);
    transition: 300ms;
    box-shadow: 1px 1px 3px 3px rgb(100, 16, 100) ;
    color: rgb(100, 16, 100);
