@@ -4,8 +4,8 @@ import './style.css'
 const CardProduto = ({precoProduto, nome,imagemProduto}) => {
 
     return (
-        <div className="col-md-3 col-sm-4 d-flex align-items-stretch">
-            <div className="card text-center bg-light">
+        <div className="col-md-3 col-sm-4">
+            <div className="card text-center bg-light h-100">
                 <img src={imagemProduto} className="card-img-top" alt="..." />
                 <div className="card-header">
                     R$ {precoProduto}
