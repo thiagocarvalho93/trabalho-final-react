@@ -1,12 +1,16 @@
-import 'bootstrap/dist/css/bootstrap.min.css' 
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './Components/Categorias'
 import Categorias from './Components/Categorias';
 import './style.css';
+
 const Home = () => {
-    return(
+    return (
         <>
-          <h1 className='titulo'>Categorias</h1>
-          <Categorias />
+        <div className='container-fluid'>
+            Aqui vai um banner
+        </div>
+            <h1 className='titulo'>Categorias</h1>
+            <Categorias />
         </>
     )
 }

@@ -6,12 +6,6 @@ a{
    text-align: center;
    width: 5rem;
 }
-.container-fluid{
-   display: flex;
-   justify-content: space-around;
-   --bs-bg-opacity: 1;
-   background-color: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important;
-}
 
 .container-fluid a:hover{
    background-color:grey;

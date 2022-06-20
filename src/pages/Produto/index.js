@@ -6,6 +6,7 @@ import Filtros from './components/Filtros';
 import Pesquisa from './components/Pesquisa';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
 
 const Produto = () => {
 
@@ -23,6 +24,7 @@ const Produto = () => {
         try{
             const { data } = await axios.get('https://teg-store-api.herokuapp.com/tegloja/produtos')
             setProdutos(data)
+            console.log(data);
             if(firstTime){
                 setProdutosFiltrados(data)
                 setFirstTime(false)
@@ -58,15 +60,15 @@ const Produto = () => {
     const pegaCategoria = (opcao) => {
         setCategoria(opcao);
     }
-    const pegaCategoriaId = (opcao) => {
-        setCategoria(opcao);
-    }
+
 
     return(
         <>
             <div className='ms-3 mt-3'>
                 <Categorias pegaCategoria={pegaCategoria}/>
-                <Link to="/painelproduto"> Painel de admnistração</Link>
+                <Link to="/painelproduto"> 
+                    <Button variant="outline-primary" className="mb-3">Painel</Button>
+                </Link>
             </div>
             <hr />
             <div className="m-3 row">
@@ -76,7 +78,7 @@ const Produto = () => {
                 </div>
                 <div className='container col-9 border border-dark rounded p-3 bg-dark'>
                     <div className="row g-3">
-                        {produtosFiltrados.map((produto) => <CardProduto key={produto.idProduto} nome={produto.nomeProduto} precoProduto={produto.valorUnitario}/> )}
+                        {produtosFiltrados.map((produto) => <CardProduto key={produto.idProduto} nome={produto.nomeProduto} precoProduto={produto.valorUnitario} imagemProduto={produto.urlFoto}/> )}
                     </div>
                 </div>
             </div>

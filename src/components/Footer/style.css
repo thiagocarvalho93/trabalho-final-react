@@ -40,7 +40,7 @@ path{
     width: 50px;
 }
 
-footer {
+.footerRodape {
     position: fixed;
     bottom: 0;
     height: 6vh;

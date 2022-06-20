@@ -1,6 +1,6 @@
 import { FaXbox, FaMicrosoft, FaPlaystation, FaSteam, FaAndroid, FaApple, FaMouse } from "react-icons/fa"
 import { SiNintendoswitch } from "react-icons/si"
-import { BsFillCpuFill,BsLaptop } from "react-icons/bs"
+import { BsFillCpuFill, BsLaptop } from "react-icons/bs"
 import { MdMonitor } from "react-icons/md"
 import { GiOfficeChair } from "react-icons/gi"
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom"
@@ -26,15 +26,15 @@ const Card = (categoria) => {
             case 7:
                 return <><SiNintendoswitch className="icones me-2" /></>
             case 8:
-                return <><FaSteam  className="icones me-2" /></>
+                return <><FaSteam className="icones me-2" /></>
             case 9:
-                return <><GiOfficeChair  className="icones me-2" /></>
+                return <><GiOfficeChair className="icones me-2" /></>
             case 10:
-                return <><BsLaptop  className="icones me-2" /></>
+                return <><BsLaptop className="icones me-2" /></>
             case 11:
-                return <><MdMonitor  className="icones me-2" /></>
+                return <><MdMonitor className="icones me-2" /></>
             case 12:
-                return <><BsFillCpuFill  className="icones me-2" /></>
+                return <><BsFillCpuFill className="icones me-2" /></>
 
             default:
                 return 'vazio'
@@ -48,23 +48,22 @@ const Card = (categoria) => {
 
     return (
         <>
-
-            <div className="col-md-4 col-lg-3 col-xs-2">
+            <div className="col-md-4 col-xl-2 col-lg-3 col-sm-4 d-flex justify-content-center">
                 <button className="btnn mt-3" onClick={handleCategoria} >
-                    <div className="card shadow-sm mb-2">
-                        <div className="card-header d-flex justify-content-between">
-                            {handleIcons()}
-                            <span className="d-flex align-items-center"></span>
-                        </div>
-                        <div className="card-body">
-                            <p className="card-text">{categoria.categoria}</p>
-                            <div className="d-flex justify-content-end">
+                    <div className="cardHover">
+                        <div className="card shadow-sm mb-2 text-center">
+                            <div className="card-header d-flex">
+                                {handleIcons()}
+                            </div>
+                            <div className="card-body">
+                                <p className="card-text">{categoria.categoria}</p>
+                                <div className="d-flex justify-content-end">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </button>
             </div>
-
         </>
 
     )
