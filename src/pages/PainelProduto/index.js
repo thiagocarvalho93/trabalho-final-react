@@ -9,7 +9,7 @@ const PainelProduto = () => {
 
     const [nomeProduto, setNomeProduto] = useState("")
     const [produtos, setProdutos] = useState([])
-    const [produtoSelecionado, setProdutoSelecionado] = useState('')
+    const [produtoSelecionado, setProdutoSelecionado] = useState(0)
     const [loading, setLoading] = useState(false)
     const [modalAdicionar, setModalAdicionar] = useState(false);
     const [showAdicionar, setShowAdicionar] = useState(false);
@@ -34,7 +34,12 @@ const PainelProduto = () => {
     const handleCloseAdicionar = () => setShowAdicionar(false);
     const handleShowAdicionar = () => setShowAdicionar(true);
     const handleCloseExcluir = () => setShowExcluir(false);
-    const handleShowExcluir = () => setShowExcluir(true);
+    
+    const handleShowExcluir = (e) => {
+        setProdutoSelecionado(e.target.parentElement.getAttribute("idproduto"));
+        console.log(produtoSelecionado)
+        setShowExcluir(true);
+    }
 
     // Controle do produto
     
@@ -60,23 +65,23 @@ const PainelProduto = () => {
                 </thead>
                 <tbody>
                     {produtos.map((produto) => 
-                    <tr>
+                    <tr key={produto.idProduto}>
                         <td >{produto.idProduto}</td>
                         <td>{produto.nomeProduto}</td>
                         <td>{produto.categoria.categoria}</td>
                         <td>{produto.valorUnitario}</td>
                         <td>{produto.quantidadeEstoque}</td>
                         <td>{produto.dataAlteracao}</td>
-                        <td>
+                        <td idproduto={produto.idProduto}>
                             <Button variant="outline-warning" className="me-2">Editar</Button>
-                            <Button variant="outline-danger" onClick={handleShowExcluir}>Excluir</Button>
+                            <Button variant="outline-danger" onClick={(e) => handleShowExcluir(e)}>Excluir</Button>
                         </td>
                     </tr>
                     )}
                 </tbody>
                 </Table>
 
-                <ModalExcluir handleClose={handleCloseExcluir} show={showExcluir}/>
+                <ModalExcluir idProduto={produtoSelecionado} handleClose={handleCloseExcluir} show={showExcluir}/>
 
             </form>
         </div>

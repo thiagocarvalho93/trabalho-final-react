@@ -1,7 +1,11 @@
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
-const ModalExcluir = ({show, handleClose}) => {
+const ModalExcluir = ({show, handleClose, idProduto}) => {
+
+    const deleteProduto = async () => {
+        
+    }
 
     return (
         <Modal show={show} onHide={handleClose}>
@@ -9,7 +13,7 @@ const ModalExcluir = ({show, handleClose}) => {
                 <Modal.Title>Excluir Produto</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                Tem certeza que deseja excluir o produto?
+                Tem certeza que deseja excluir o produto {idProduto}?
             </Modal.Body>
             <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>
