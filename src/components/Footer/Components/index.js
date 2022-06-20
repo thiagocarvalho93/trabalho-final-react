@@ -9,7 +9,7 @@ const Redirect=(url)=>{
 
 const Social = () => {
     return (
-        <footer className="bg-dark text-center text-white" >
+        <footer className="bg-dark text-center text-white footerRodape" >
             <div className="container p">
 
                 <section className="footer-center">

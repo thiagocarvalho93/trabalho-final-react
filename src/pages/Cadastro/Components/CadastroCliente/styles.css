@@ -7,10 +7,13 @@ body {
   h3 {
     color: var(--primary-color);
   }
-.form-control{
+.cadastro{
   width: 20rem;
   min-width: 16%;
   margin-bottom: 0.5rem;
+  margin-top: 0.2rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 #cidade{
   width: 11rem;
@@ -27,12 +30,6 @@ body {
 
   #numeroEndereco{
     width: 4rem;
-  }
-  
-  input {
-    margin-top: 0.2rem;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
   }
   
   textarea {
