@@ -1,14 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
+import './style.css'
 
-
-const CardProduto = ({precoProduto, nome}) => {
-
-
+const CardProduto = ({precoProduto, nome,imagemProduto}) => {
 
     return (
-        <div className="col col-md-4 col-sm-6 col-lg-3">
+        <div className="col-md-3 col-sm-4 d-flex align-items-stretch">
             <div className="card text-center bg-light">
-                <img src="./img/Acessorios/01.jpg" className="card-img-top" alt="..." />
+                <img src={imagemProduto} className="card-img-top" alt="..." />
                 <div className="card-header">
                     R$ {precoProduto}
                 </div>

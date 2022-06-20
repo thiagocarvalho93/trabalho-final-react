@@ -94,25 +94,25 @@ const CadastroCliente = () => {
                     <div className="row g-3 mt-2 mb-6">
                         <div className='col-md-6 '>
                             <label >  Nome:
-                                <input type="text" className="form-control" id="nome" name="nome" placeholder="Digite seu nome" required value={nome} onChange={(e) => setNome(e.target.value)} />
+                                <input type="text" className="form-control cadastro" id="nome" name="nome" placeholder="Digite seu nome" required value={nome} onChange={(e) => setNome(e.target.value)} />
 
                                 <span className="obrigatorio" > * </span>
 
                                 Email:
-                                <input type="email" className="form-control" id="emailCadastro" name="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Digite seu e-mail" />
+                                <input type="email" className="form-control cadastro" id="emailCadastro" name="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Digite seu e-mail" />
                                 <span className="obrigatorio" > *  </span>
                                 Senha:
 
-                                <input type="password" className="form-control" id="senha1" name="password" placeholder="Digite sua senha" value={senha} onChange={(e) => setSenha(e.target.value)} />
+                                <input type="password" className="form-control cadastro" id="senha1" name="password" placeholder="Digite sua senha" value={senha} onChange={(e) => setSenha(e.target.value)} />
 
                                 <span className="obrigatorio"> *  </span>
 
                                 Repita:
-                                <input onBlur={validarSenha} className="form-control" type="password" id="senha2" name="password"
+                                <input onBlur={validarSenha} className="form-control cadastro" type="password" id="senha2" name="password"
                                     placeholder="Repita a sua senha" /><span className="obrigatorio"> *  </span>
 
                                 Cpf:
-                                <input type="text" className="form-control" id="cpf" name="cpfo" value={cpf} onChange={(e) => setCpf(e.target.value)} />
+                                <input type="text" className="form-control cadastro" id="cpf" name="cpfo" value={cpf} onChange={(e) => setCpf(e.target.value)} />
                             </label>
                         </div>
 
@@ -121,26 +121,26 @@ const CadastroCliente = () => {
                                 <label>
 
                                     Cep:
-                                    <input type="text" id="cep" className="form-control" name="cep" placeholder="buscar cep :)" onChange={(e) => setEndereco(e.target.value)} value={endereco.cep} onBlur={handleBlur} />
+                                    <input type="text" id="cep" className="form-control cadastro" name="cep" placeholder="buscar cep :)" onChange={(e) => setEndereco(e.target.value)} value={endereco.cep} onBlur={handleBlur} />
 
                                     Numero: <span className='spanUF'>UF:</span> <span className='spanCidade'>Cidade:</span>
                                     <div className='d-flex '>
-                                        <input type="text" className="form-control" id="numeroEndereco" name="numero" placeholder="nº" value={numeroEndereco} onChange={(e) => setNumeroEndereco(e.target.value)} />
+                                        <input type="text" className="form-control cadastro" id="numeroEndereco" name="numero" placeholder="nº" value={numeroEndereco} onChange={(e) => setNumeroEndereco(e.target.value)} />
 
 
-                                        <input type="text" className="form-control" id="uf" name="uf" disabled value={endereco.uf} />
+                                        <input type="text" className="form-control cadastro" id="uf" name="uf" disabled value={endereco.uf} />
 
-                                        <input type="text" className="form-control" id="cidade" name="cidade" disabled value={endereco.cidade} />
+                                        <input type="text" className="form-control cadastro" id="cidade" name="cidade" disabled value={endereco.cidade} />
                                     </div>
 
                                     Complemento :
-                                    <input type="text" id="complemento" className="form-control" name="complemento" placeholder="Complemento caso houver" value={complemento} onChange={(e) => setComplemento(e.target.value)} />
+                                    <input type="text" id="complemento" className="form-control cadastro" name="complemento" placeholder="Complemento caso houver" value={complemento} onChange={(e) => setComplemento(e.target.value)} />
 
                                     Logradouro:
-                                    <input type="text" className="form-control" id="logradouro" name="cep" placeholder="Rua|Avenida|etc" disabled value={endereco.logradouro} />
+                                    <input type="text" className="form-control cadastro" id="logradouro" name="cep" placeholder="Rua|Avenida|etc" disabled value={endereco.logradouro} />
 
                                     Bairro:
-                                    <input type="text" className="form-control" id="bairro" name="bairro" disabled value={endereco.bairro} />
+                                    <input type="text" className="form-control cadastro" id="bairro" name="bairro" disabled value={endereco.bairro} />
 
 
                                 </label>

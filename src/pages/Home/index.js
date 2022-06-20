@@ -6,7 +6,9 @@ import './style.css';
 const Home = () => {
     return (
         <>
-            <img src='../../assets/imagembanner/Banner.svg' alt='baner tegloja' />
+        <div className='container-fluid'>
+            Aqui vai um banner
+        </div>
             <h1 className='titulo'>Categorias</h1>
             <Categorias />
         </>

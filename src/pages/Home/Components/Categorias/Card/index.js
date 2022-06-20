@@ -48,7 +48,7 @@ const Card = (categoria) => {
 
     return (
         <>
-            <div className="col-md-4 col-xl-2 col-lg-3 col-sm-4 col d-flex justify-content-center">
+            <div className="col-md-4 col-xl-2 col-lg-3 col-sm-4 d-flex justify-content-center">
                 <button className="btnn mt-3" onClick={handleCategoria} >
                     <div className="cardHover">
                         <div className="card shadow-sm mb-2 text-center">
