@@ -7,6 +7,7 @@ const Home = () => {
     return (
         <>
         <div className='container-fluid'>
+            <img src='../../assets/imagembanner/Banner.png' alt='Banner' />
             Aqui vai um banner
         </div>
             <h1 className='titulo'>Categorias</h1>

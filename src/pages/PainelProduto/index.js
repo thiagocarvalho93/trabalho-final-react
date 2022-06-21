@@ -14,6 +14,7 @@ const PainelProduto = () => {
     const [modalAdicionar, setModalAdicionar] = useState(false);
     const [showAdicionar, setShowAdicionar] = useState(false);
     const [showExcluir, setShowExcluir] = useState(false);
+    const [showEditar, setShowEditar] = useState(false);
 
     const getProdutos = async () => {
         setLoading(true)
@@ -39,10 +40,15 @@ const PainelProduto = () => {
         setProdutoSelecionado(e.target.parentElement.getAttribute("idproduto"));
         console.log(produtoSelecionado)
         setShowExcluir(true);
-    }
+    }    
 
-    // Controle do produto
-    
+    const handleShowEditar = (e) => {
+        setProdutoSelecionado(e.target.parentElement.getAttribute("idproduto"));
+        console.log(produtoSelecionado)
+        setShowEditar(true);
+    }  
+
+    const handleCloseEditar = () => setShowEditar(false);
 
     return (
         <div className="container">
@@ -69,19 +75,20 @@ const PainelProduto = () => {
                         <td >{produto.idProduto}</td>
                         <td>{produto.nomeProduto}</td>
                         <td>{produto.categoria.categoria}</td>
-                        <td>{produto.valorUnitario}</td>
+                        <td>R$ {produto.valorUnitario.toFixed(2)}</td>
                         <td>{produto.quantidadeEstoque}</td>
                         <td>{produto.dataAlteracao}</td>
                         <td idproduto={produto.idProduto}>
-                            <Button variant="outline-warning" className="me-2">Editar</Button>
+                            <Button variant="outline-warning" onClick={(e) => handleShowEditar(e)} className="me-2">Editar</Button>
                             <Button variant="outline-danger" onClick={(e) => handleShowExcluir(e)}>Excluir</Button>
                         </td>
                     </tr>
                     )}
                 </tbody>
                 </Table>
-
-                <ModalExcluir idProduto={produtoSelecionado} handleClose={handleCloseExcluir} show={showExcluir}/>
+                
+                <ModalAdicionar idproduto={produtoSelecionado} handleClose={handleCloseEditar} show={showEditar} />
+                <ModalExcluir idproduto={produtoSelecionado} handleClose={handleCloseExcluir} show={showExcluir}/>
 
             </form>
         </div>
