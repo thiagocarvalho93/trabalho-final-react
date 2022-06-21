@@ -38,13 +38,13 @@ const Categorias = ({pegaCategoria, pegaCategoriaId}) => {
     },[])
 
     const handleChange = (e) => {
-      pegaCategoria(e.target.value)
+      pegaCategoria(e.target.getAttribute("idcategoria"))
     }
 
     return(
         <div className="col-2 mb-2">
         <select className="form-select" onChange={handleChange}>
-          {categorias.map((categoria) => <option key={categoria.id} selected={categoria.id===option} value={categoria.categoria}>{categoria.categoria}</option>)}
+          {categorias.map((categoria) => <option key={categoria.id} selected={categoria.id===option} idcategoria={categoria.id} value={categoria.categoria}>{categoria.categoria}</option>)}
           </select>
         </div>
     )
