@@ -1,0 +1,65 @@
+body {
+    background-color: rgb(219, 219, 219);
+  }
+  
+  header,
+  main {
+    margin-block: 10px;
+  }
+  
+  .navbar-brand:hover {
+    opacity: 0.3;
+  }
+  
+  .col-3,
+  .col-10 {
+    height: calc(20vh - 10px);
+  }
+  
+  .col-3 {
+    background-color: var(--primary-color);
+  }
+  
+  main .row .bg-white {
+    padding-block: 10px;
+    border-radius: 0.5rem;
+    box-shadow: 4px 6px 12px -4px;
+  }
+  
+  .form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--secondary-color);
+  }
+  
+  textarea {
+    margin-bottom: 1rem;
+  }
+  
+  header .row .col {
+    margin-inline: 10px;
+  }
+  
+  .col-4 {
+    padding: 5px;
+  }
+  
+  row {
+    margin: 0.5rem;
+  }
+  
+  main .col-2 {
+    height: calc(60vh - 10px);
+    margin-inline: 10px;
+  }
+  
+  main .red {
+    margin: 0;
+  }
+  
+  main .row .col {
+    margin-inline: 10px;
+  }
+  
+  .submit {
+    width: 10rem;
+  }
