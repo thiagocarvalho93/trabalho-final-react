@@ -1,4 +1,4 @@
-    import Modal from 'react-bootstrap/Modal';
+import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -30,34 +30,36 @@ const ModalAdicionar = ({show, handleClose}) => {
       }
 
     return (
-        <Modal show={show} onHide={handleClose} fullscreen={true}>
+        <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
                 <Modal.Title>Adicionar Produto</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-            <div className='row mb-3'>
-                <div className="col-6 form-outline">
+            <div className='container'>
+                <div className="col form-outline mb-3">
                     <label htmlFor="nome" className="form-label">Nome</label>
                     <input type="text" placeholder='Entre o nome do produto' className='form-control'/>
                 </div>
-                <div id="categoria" className="col-2 form-outline">
-                    <label htmlFor="categoria" className="form-label">Categoria</label>
+                <div id="categoria" className="col form-outline mb-3">
                     <select className="form-select" onChange={handleChange}>
+                    <label htmlFor="categoria" className="form-label">Categoria</label>
                         {categorias.map((categoria) => <option key={categoria.id} value={categoria.categoria}>{categoria.categoria}</option>)}
                     </select>
                 </div>
-            </div>
-            <div className='row'>
-                <div className='form-outline col-6'>
+            
+                <div className='form-outline col mb-3'>
                     <label htmlFor="valor" className='form-label'>Valor unitário</label>
                     <input type="number" id="valor" className='form-control' placeholder='Entre o valor'/>
                 </div>
-                <div className='form-outline col-2'>
+                <div className='form-outline col mb-3'>
                     <label htmlFor="quantidade" className='form-label'>Quantidade em estoque</label>
                     <input type="number" id="quantidade" className='form-control' placeholder='Entre a quantidade'/>
                 </div>
+                <div className="col form-outline mb-3">
+                    <label htmlFor="image" className="form-label">URL da imagem</label>
+                    <input type="text" placeholder='Entre a URL da imagem' className='form-control'/>
+                </div>
             </div>
-
             </Modal.Body>
             <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>

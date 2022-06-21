@@ -8,7 +8,7 @@ const CardProduto = ({precoProduto, nome,imagemProduto}) => {
             <div className="card text-center bg-light h-100">
                 <img src={imagemProduto} className="card-img-top" alt="..." />
                 <div className="card-header">
-                    R$ {precoProduto}
+                    R$ {precoProduto.toFixed(2)}
                 </div>
                 <div className="card-body">
                     <h5>{nome}</h5>
