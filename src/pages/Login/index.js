@@ -2,9 +2,30 @@ import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import {FcLock, FcAddressBook} from "react-icons/fc";
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom'
 
+const user = {
+  login: 'fulano',
+  senha: '123'
+}
 
 const Login = () => {
+
+    const [login, setLogin] = useState("")
+    const [senha, setSenha] = useState("")
+    const navigate = useNavigate();
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+        
+        if(login === user.login && senha === user.senha) {
+            localStorage.setItem('email', login);
+            localStorage.setItem('senha', senha);
+            navigate('/')
+        }
+    }
+
     return(    
         <>   
         
@@ -16,7 +37,7 @@ const Login = () => {
             Email:
             <FcAddressBook/>
             </Form.Label>
-        <Form.Control type="email" placeholder="Digite seu email" />
+        <Form.Control type="email" value={login} onChange={e => setLogin(e.target.value)} placeholder="Digite seu email" />
       </Form.Group>
 
       <Form.Group className="container col-6  p-3 " controlId="formBasicPassword">
@@ -24,10 +45,10 @@ const Login = () => {
             Senha:
             <FcLock/>
             </Form.Label>
-        <Form.Control type="password" placeholder="Digite sua senha" />
+        <Form.Control type="password" value={senha} onChange={e => setSenha(e.target.value)} placeholder="Digite sua senha" />
       </Form.Group>
       
-      <Button variant="btn btn-primary" type="submit mt-2" className=" col-4  p-2 mt-2 " >
+      <Button variant="btn btn-primary" type="submit mt-2" onClick={handleLogin} className=" col-4  p-2 mt-2 " >
         Entrar
       </Button>
      
