@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom"
-import './index.css'
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css'
 

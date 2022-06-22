@@ -28,12 +28,12 @@ const ModalEditar = ({show, handleClose, idproduto}) => {
         }
       }
 
+      // Para buscar a informação do produto selecionado - falta implementar
       const dadosProduto = async () => {
         const res = await getProduto(idproduto);
         setNomeProduto(res.data.nomeProduto)
         setValorUnitario(res.data.valorUnitario)
         setEstoque(res.data.quantidadeEstoque)
-        console.log(res.data)
       }
 
       useEffect(() => {
@@ -45,12 +45,7 @@ const ModalEditar = ({show, handleClose, idproduto}) => {
       }
 
       const handleEditar = async () => {
-        console.log(idproduto)
-        console.log(categoriaSelecionada)
-        console.log(nomeProduto)
-        console.log(estoque)
         const response = await putProduto(idproduto, categoriaSelecionada, nomeProduto, estoque, valorUnitario);
-        console.log(response);
         handleClose();
       }
 

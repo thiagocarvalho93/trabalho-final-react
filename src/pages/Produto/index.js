@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import CardProduto from './components/CardProduto';
 import Categorias from "./components/Categorias";
 import Filtros from './components/Filtros';
-import Pesquisa from './components/Pesquisa';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';

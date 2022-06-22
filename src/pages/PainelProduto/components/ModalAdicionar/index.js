@@ -31,7 +31,6 @@ const ModalAdicionar = ({show, handleClose}) => {
 
       const handleAdicionar = async () => {
         const response = await postProduto(categoriaSelecionada, nomeProduto, estoque, valorUnitario);
-        console.log(response);
         handleClose();
       }
 

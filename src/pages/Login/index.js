@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import {FcLock, FcAddressBook} from "react-icons/fc";
-import { useState } from 'react';
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const user = {
@@ -29,10 +29,10 @@ const Login = () => {
     return(    
         <>   
         
-<Form className="container text-center col-5 mt-5  p-4 mb-5 bg-body rounded-2">
+<Form className="container text-center col-5 mt-5  p-4 mb-5 bg-body rounded-2 shadow">
 <img width={"100px"}  src="https://cdn-icons-png.flaticon.com/512/17/17004.png"/>
 
-      <Form.Group className="container col-12 col-md-8  p-3  "  controlId="formBasicEmail">
+      <Form.Group className="container col-12 col-md-8  p-3"  controlId="formBasicEmail">
         <Form.Label className="w-100 text-start" >
             Email:
             <FcAddressBook/>
