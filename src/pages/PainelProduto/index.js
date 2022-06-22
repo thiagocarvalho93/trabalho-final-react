@@ -48,7 +48,7 @@ const PainelProduto = () => {
                 <hr />
                 <Button variant="outline-success" className="mb-3" onClick={handleShowAdicionar}>Adicionar</Button>
                 <ModalAdicionar handleClose={handleCloseAdicionar} show={showAdicionar} />
-                <Table striped bordered hover>
+                <Table striped bordered hover responsive="md">
                 <thead>
                     <tr>
                         <th>id</th>

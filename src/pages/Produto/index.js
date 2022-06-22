@@ -74,11 +74,11 @@ const Produto = () => {
                 </Link>
             </div>
             <div className="m-3 mb-5 row">
-                <div className='container col-2 shadow rounded p-3 bg-light text-dark h-100'>
+                <div className='container text-center col-12 col-md-2 mb-3 shadow rounded p-3 bg-light text-dark h-100'>
                     {/* <Pesquisa pegarNome={pegaNomeProduto} /> */}
                     <Filtros pegaPrecoMax={pegaPrecoMax} />
                 </div>
-                <div className='container col-9 shadow rounded p-3 bg-light text-dark'>
+                <div className='container col-12 col-md-9 shadow rounded p-3 bg-light text-dark'>
                     <div className="row g-4">
                         {produtosFiltrados.map((produto) => <CardProduto key={produto.idProduto} nome={produto.nomeProduto} precoProduto={produto.valorUnitario} imagemProduto={produto.urlFoto} />)}
                     </div>

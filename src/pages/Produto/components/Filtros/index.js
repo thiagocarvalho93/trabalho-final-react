@@ -7,7 +7,7 @@ const Filtros = ({pegaPrecoMax, maiorPreco}) => {
     const [preco, setPreco] = useState(500)
 
     return(
-        <div>
+        <div className="container">
             <h4 className="mb-3"><FaFilter />Filtros</h4>
             <div>
                 <p className="mb-0"><FaDollarSign />Preço máximo</p>
@@ -19,7 +19,6 @@ const Filtros = ({pegaPrecoMax, maiorPreco}) => {
             </div>
         </div>
     )
-
 }
 
 export default Filtros
