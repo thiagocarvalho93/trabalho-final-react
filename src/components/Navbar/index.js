@@ -21,13 +21,13 @@ const Navbar = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li className="nav-item">
+                        <li className="nav-item dropdown">
                             <Link to="/produto" className="nav-link active pb-3"> Produtos</Link>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item dropdown">
                             <Link to="/login" className="nav-link active pb-3"> Login</Link>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item dropdown">
                             <Link to="/carrinho" className="nav-link active pb-3"> <FaShoppingCart /></Link>
                         </li>
                     </ul>
