@@ -12,7 +12,7 @@ import { useLocation } from 'react-router-dom';
 const Produto = () => {
 
     const location = useLocation()
-    const [precoMax, setPrecoMax] = useState(5000)
+    const [precoMax, setPrecoMax] = useState(10000)
     const [nomeProduto, setNomeProduto] = useState("")
     const [produtos, setProdutos] = useState([])
     const [produtosFiltrados, setProdutosFiltrados] = useState([])
@@ -44,6 +44,7 @@ const Produto = () => {
             try {
                 const { data } = await axios.get(`https://teg-store-api.herokuapp.com/tegloja/categorias/${option}/produtos`)
                 console.log(data);
+                setProdutos(data)
                 setProdutosFiltrados(data)
             } catch (e) {
                 console.log(e);
@@ -52,10 +53,13 @@ const Produto = () => {
         searchCategoria();
     }, [option])
 
-    //thiago precisa ver
-    // const filtraProdutos = () => {
-    //     setProdutosFiltrados(produtos.filter((produto) => produto.valorUnitario < precoMax))
-    // }
+    useEffect(() => {
+        filtraProdutos();
+    }, [precoMax])
+
+    const filtraProdutos = () => {
+        setProdutosFiltrados(produtos.filter((produto) => produto.valorUnitario < precoMax))
+    }
 
     const pegaPrecoMax = (preco) => {
         setPrecoMax(preco);

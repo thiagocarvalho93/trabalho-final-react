@@ -18,6 +18,15 @@ const getProduto = async (idProduto) => {
     }
 }
 
+const getProdutoByName = async (nome) => {
+    try{
+    const response = await api.get("/produtos/pesquisar?nome="+ nome)
+    return response;
+    } catch(error) {
+        console.error(error);
+    }
+}
+
 const postProduto = async (idCategoria, nomeProduto, quantidadeEstoque, valorUnitario) => {
     try{
         const response = await api.post("/produtos", 
@@ -62,6 +71,7 @@ const putProduto = async (idProduto, idCategoria, nomeProduto, quantidadeEstoque
 export {
     getAllProdutos,
     getProduto,
+    getProdutoByName,
     postProduto,
     deleteProduto,
     putProduto
