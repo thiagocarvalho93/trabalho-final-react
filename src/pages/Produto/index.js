@@ -37,12 +37,10 @@ const Produto = () => {
     }, [])
 
     useEffect(() => {
-        // if (!location.state) return parar de dar erro na api
-
+       if (!location.state) return
         const searchCategoria = async () => {
             try {
                 const { data } = await axios.get(`https://teg-store-api.herokuapp.com/tegloja/categorias/${option}/produtos`)
-                console.log(data);
                 setProdutos(data)
                 setProdutosFiltrados(data)
             } catch (e) {

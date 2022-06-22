@@ -27,10 +27,9 @@ const CadastroCliente = () => {
     // Consumo da Api
     const handleAdicionarClient = async () => {
         const response = await postCliente(cep.cep, cpf, email, nome, numeroEndereco)
-        console.log(cep.cep);
+        console.log(response);
         return response
     }
-
 
     useEffect(() => {
 
