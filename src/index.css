@@ -2,6 +2,12 @@
   --bg-color:rgb(219, 219, 219);
 
   --mn-primary-color:rgb(100, 16, 100);
+  --mn-purple-color:#4f1964;
+   --mn-violet-color:#9132b6;
+   --mn-lilac-color:#e6affc;
+   --mn-grey-color:#545454;
+   --mn-gray-color:#737373;
+   --mn-cinza-color:#a6a6a6;
 }
 body {
   margin: 0;
