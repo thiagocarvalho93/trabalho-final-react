@@ -23,7 +23,7 @@ const PainelProduto = () => {
             setProdutos(data)
         } catch(e) {
             //lança uma excessão 
-            console.log(e)        
+            console.log(e)
         }
         setLoading(false)
       }
@@ -36,15 +36,13 @@ const PainelProduto = () => {
     const handleShowAdicionar = () => setShowAdicionar(true);
     const handleCloseExcluir = () => setShowExcluir(false);
     
-    const handleShowExcluir = (e) => {
-        setProdutoSelecionado(e.target.parentElement.getAttribute("idproduto"));
-        console.log(produtoSelecionado)
+    const handleShowExcluir = (idprod) => {
+        setProdutoSelecionado(idprod);
         setShowExcluir(true);
     }    
 
-    const handleShowEditar = (e) => {
-        setProdutoSelecionado(e.target.parentElement.getAttribute("idproduto"));
-        console.log(produtoSelecionado)
+    const handleShowEditar = (e, idprod) => {
+        setProdutoSelecionado(idprod);
         setShowEditar(true);
     }  
 
@@ -78,9 +76,9 @@ const PainelProduto = () => {
                         <td>R$ {produto.valorUnitario.toFixed(2)}</td>
                         <td>{produto.quantidadeEstoque}</td>
                         <td>{produto.dataAlteracao}</td>
-                        <td idproduto={produto.idProduto}>
-                            <Button variant="outline-warning" onClick={(e) => handleShowEditar(e)} className="me-2">Editar</Button>
-                            <Button variant="outline-danger" onClick={(e) => handleShowExcluir(e)}>Excluir</Button>
+                        <td>
+                            <Button variant="outline-warning" onClick={() => handleShowEditar(produto.idProduto)} className="me-2">Editar</Button>
+                            <Button variant="outline-danger" onClick={() => handleShowExcluir(produto.idProduto)}>Excluir</Button>
                         </td>
                     </tr>
                     )}

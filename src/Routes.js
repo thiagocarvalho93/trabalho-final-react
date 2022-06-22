@@ -32,4 +32,5 @@ const Rotas = () => {
     </BrowserRouter>
     )
 }
+
 export default Rotas;
