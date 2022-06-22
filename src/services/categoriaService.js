@@ -3,7 +3,6 @@ import api from "./api"
 const getAllCategorias = async () => {
     try{
     const response = await api.get('/categorias')
-    console.log(response);
     return response;
     } catch(error) {
         console.error(error);
@@ -13,7 +12,15 @@ const getAllCategorias = async () => {
 const getCategoria = async (idCategoria) => {
     try{
     const response = await api.get("/categorias/"+ idCategoria)
-    console.log(response);
+    return response;
+    } catch(error) {
+        console.error(error);
+    }
+}
+
+const getCategoriaByName = async (nome) => {
+    try{
+    const response = await api.get("/categorias/pesquisar?nome=" + nome)
     return response;
     } catch(error) {
         console.error(error);
@@ -27,7 +34,6 @@ const postCategoria = async (categoria) => {
             "categoria": categoria
         }
     )
-    console.log(response);
     return response;
     } catch(error) {
         console.error(error);
@@ -37,7 +43,6 @@ const postCategoria = async (categoria) => {
 const deleteCategoria = async (idCategoria) => {
     try{
     const response = await api.delete("/categorias/" + idCategoria)
-    console.log(response);
     return response;
     } catch(error) {
         console.error(error);
@@ -51,7 +56,6 @@ const putCategoria = async (idCategoria, categoria) => {
             "categoria": categoria
         }
     )
-    console.log(response);
     return response;
     } catch(error) {
         console.error(error);
@@ -61,6 +65,7 @@ const putCategoria = async (idCategoria, categoria) => {
 export {
     getAllCategorias,
     getCategoria,
+    getCategoriaByName,
     postCategoria,
     deleteCategoria,
     putCategoria

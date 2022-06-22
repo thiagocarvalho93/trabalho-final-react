@@ -3,7 +3,6 @@ import api from "./api"
 const getAllClientes = async () => {
     try{
     const response = await api.get('/clientes')
-    console.log(response);
     return response;
     } catch(error) {
         console.error(error);
@@ -13,7 +12,6 @@ const getAllClientes = async () => {
 const getCliente = async (idCliente) => {
     try{
     const response = await api.get("/clientes/"+ idCliente)
-    console.log(response);
     return response;
     } catch(error) {
         console.error(error);
@@ -31,7 +29,6 @@ const postCliente = async (cep, cpf, email, nome, numeroEndereco) => {
             "numeroEndereco": numeroEndereco
           }
     )
-    console.log(response);
     return response;
     } catch(error) {
         console.error(error);
@@ -41,7 +38,6 @@ const postCliente = async (cep, cpf, email, nome, numeroEndereco) => {
 const deleteCliente = async (idCategoria) => {
     try{
     const response = await api.delete("/clientes/" + idCategoria)
-    console.log(response);
     return response;
     } catch(error) {
         console.error(error);
@@ -55,7 +51,6 @@ const putCliente = async (idCategoria, categoria) => {
             "categoria": categoria
         }
     )
-    console.log(response);
     return response;
     } catch(error) {
         console.error(error);
