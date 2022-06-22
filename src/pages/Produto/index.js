@@ -19,7 +19,6 @@ const Produto = () => {
     const [option, setOption] = useState(location.state)
     const [loading, setLoading] = useState(false)
 
-    console.log(location.state);
     useEffect(() => {
         const getProdutos = async () => {
             setLoading(true)

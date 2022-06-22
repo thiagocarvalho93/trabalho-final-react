@@ -32,7 +32,7 @@ const Categorias = () => {
 
   return (
     <>
-      <div className="container p-2 mb-5 ">
+      <div className="container mb-6 ">
         <div className="row">
           {categorias.map((categoria) =>
             <Card key={categoria.id} index={categoria.id} categoria={categoria.categoria}></Card>)}

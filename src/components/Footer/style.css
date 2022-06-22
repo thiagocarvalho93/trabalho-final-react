@@ -51,7 +51,6 @@ path{
     width: 100vw;
   }
   svg {
-    font-size: 15px;
     margin-inline: 10px;
 
   }
@@ -60,6 +59,6 @@ path{
   .footer-center {
     display: flex;
     justify-content: center;
-    margin-block: 0.7rem;
+    margin-block: 0.3rem;
     overflow: visible;
   }

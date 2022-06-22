@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './style.css'
 
-const CardProduto = ({precoProduto, nome,imagemProduto}) => {
+const CardProduto = ({ precoProduto, nome, imagemProduto }) => {
 
     return (
         <div className="col-md-3 col-sm-4">
@@ -17,7 +17,7 @@ const CardProduto = ({precoProduto, nome,imagemProduto}) => {
                 <div className="card-footer">
                     <form className="">
                         <button className="btn btn-primary">
-                        Adicionar ao carrinho
+                            Adicionar ao carrinho
                         </button>
                     </form>
                 </div>

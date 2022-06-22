@@ -1,13 +1,35 @@
-a{
+a {
    text-decoration: none;
    display: block;
    height: 5vh;
    color: white;
    text-align: center;
-   width: 5rem;
 }
 
-.container-fluid a:hover{
-   background-color:grey;
-   color: white;
+.container-fluid a:hover {
+   background-color: grey;
+}
+
+.buscarProd {
+   height: 2.3rem;
+}
+
+.logo-brand {
+   position: absolute;
+   top: -5px;
+   left: 0;
+}
+
+.logo-brand:hover {
+   transition: 200ms;
+   opacity: 1;
+}
+
+.brand-novo {
+   margin-left: 3rem;
+}
+
+.brand-novo:hover {
+
+  fill: aqua;
 }
