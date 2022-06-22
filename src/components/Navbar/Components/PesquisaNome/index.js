@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 const PesquisaNome = (setProdutosFiltrados)=>{
 
     const searchCategoria = async () => {

@@ -5,12 +5,12 @@
   
   }
   
-  body,
+  /* body,
   html {
     max-width: 100%;
     min-width: 15%;
     height: calc(100% - 10px);
-  }
+  } */
 /*   
   .navbar-brand:hover {
     opacity: 0.3;
