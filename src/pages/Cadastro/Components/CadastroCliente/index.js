@@ -2,14 +2,14 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { useEffect, useState } from 'react'
 import axios from 'axios';
 import './styles.css'
+import { postCliente } from './../../../../services/clienteService'
 const CadastroCliente = () => {
-
 
     const [nome, setNome] = useState("")
     const [email, setEmail] = useState("")
     const [senha, setSenha] = useState("")
     const [cpf, setCpf] = useState("")
-    const [endereco, setEndereco] = useState([])
+    const [cep, setCep] = useState([])
     const [numeroEndereco, setNumeroEndereco] = useState("")
     const [complemento, setComplemento] = useState("")
 
@@ -20,16 +20,27 @@ const CadastroCliente = () => {
         try {
             const { data } = await axios.get(`https://teg-store-api.herokuapp.com/tegloja/cep/${cep}`)
 
-            setEndereco(data)
+            setCep(data)
 
         } catch (e) {
 
         }
     }
+   // (cep, cpf, email, nome, numeroEndereco)
+    // Consumo da Api
+    const handleAdicionarClient = async () => {
+        const response = await postCliente(cep.cep,cpf, email, nome, numeroEndereco)
+        console.log(cep.cep);
+        return response
+    }
+
+
     useEffect(() => {
 
         getCep();
-    }, [])
+    }, [cep])
+
+
     const handleBlur = (e) => getCep(e.target.value)
 
     const validarSenha = () => {
@@ -79,7 +90,7 @@ const CadastroCliente = () => {
             email: email,
 
         },
-            endereco]
+            cep]
         console.log(novoCadastro);
     }
 
@@ -93,7 +104,8 @@ const CadastroCliente = () => {
                     <h3 className='text-center'>Informe seu melhor cadastro!</h3>
                     <div className="row g-3 mt-2 mb-6">
                         <div className='col-md-6 '>
-                            <label >  Nome:
+
+                            <label >  <span className="obrigatorio" > * </span> Nome:
                                 <input type="text" className="form-control cadastro" id="nome" name="nome" placeholder="Digite seu nome" required value={nome} onChange={(e) => setNome(e.target.value)} />
 
                                 <span className="obrigatorio" > * </span>
@@ -121,26 +133,26 @@ const CadastroCliente = () => {
                                 <label>
 
                                     Cep:
-                                    <input type="text" id="cep" className="form-control cadastro" name="cep" placeholder="buscar cep :)" onChange={(e) => setEndereco(e.target.value)} value={endereco.cep} onBlur={handleBlur} />
+                                    <input type="text" id="cep" className="form-control cadastro" name="cep" placeholder="buscar cep :)" onChange={(e) => setCep(e.target.value)} value={cep.cep} onBlur={handleBlur} />
 
                                     Numero: <span className='spanUF'>UF:</span> <span className='spanCidade'>Cidade:</span>
                                     <div className='d-flex '>
                                         <input type="text" className="form-control cadastro" id="numeroEndereco" name="numero" placeholder="nº" value={numeroEndereco} onChange={(e) => setNumeroEndereco(e.target.value)} />
 
 
-                                        <input type="text" className="form-control cadastro" id="uf" name="uf" disabled value={endereco.uf} />
+                                        <input type="text" className="form-control cadastro" id="uf" name="uf" disabled value={cep.uf} />
 
-                                        <input type="text" className="form-control cadastro" id="cidade" name="cidade" disabled value={endereco.cidade} />
+                                        <input type="text" className="form-control cadastro" id="cidade" name="cidade" disabled value={cep.cidade} />
                                     </div>
 
                                     Complemento :
                                     <input type="text" id="complemento" className="form-control cadastro" name="complemento" placeholder="Complemento caso houver" value={complemento} onChange={(e) => setComplemento(e.target.value)} />
 
                                     Logradouro:
-                                    <input type="text" className="form-control cadastro" id="logradouro" name="cep" placeholder="Rua|Avenida|etc" disabled value={endereco.logradouro} />
+                                    <input type="text" className="form-control cadastro" id="logradouro" name="cep" placeholder="Rua|Avenida|etc" disabled value={cep.logradouro} />
 
                                     Bairro:
-                                    <input type="text" className="form-control cadastro" id="bairro" name="bairro" disabled value={endereco.bairro} />
+                                    <input type="text" className="form-control cadastro" id="bairro" name="bairro" disabled value={cep.bairro} />
 
 
                                 </label>
@@ -148,7 +160,7 @@ const CadastroCliente = () => {
                         </div>
 
                     </div>
-                    <input type="button" value="Enviar" className="btn btn-primary submit mt-2" id="cadastro" name="Enviar Formulário" onClick={handleForm} />
+                    <input type="button" value="Enviar" className="btn btn-primary submit mt-2" id="cadastro" name="Enviar Formulário" onClick={handleAdicionarClient} />
                     <label> <input type="checkbox" name="novidades" id="sim" defaultChecked /> Deseja receber nossas novidades?<br />
                     </label>
                 </form>
