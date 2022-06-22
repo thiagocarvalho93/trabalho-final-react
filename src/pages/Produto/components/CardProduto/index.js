@@ -4,8 +4,8 @@ import './style.css'
 const CardProduto = ({ precoProduto, nome, imagemProduto }) => {
 
     return (
-        <div className="col-md-3 col-sm-4">
-            <div className="card text-center bg-light h-100">
+        <div className="col-md-3 col-sm-4 ">
+            <div className="card text-center bg-light h-100 cardHover-1">
                 <img src={imagemProduto} className="card-img-top" alt="..." />
                 <div className="card-header">
                     R$ {precoProduto.toFixed(2)}
@@ -14,7 +14,7 @@ const CardProduto = ({ precoProduto, nome, imagemProduto }) => {
                     <h5>{nome}</h5>
                     <p className="card-text"></p>
                 </div>
-                <div className="card-footer">
+                <div className="card-footer p-3">
                     <form className="">
                         <button className="btn btn-primary">
                             Adicionar ao carrinho

@@ -73,14 +73,13 @@ const Produto = () => {
                     <Button variant="outline-primary" className="mb-3">Painel</Button>
                 </Link>
             </div>
-            <hr />
-            <div className="m-3 row">
+            <div className="m-3 mb-5 row">
                 <div className='container col-2 border border-dark rounded p-3 bg-dark text-white'>
-                    <Pesquisa pegarNome={pegaNomeProduto} />
+                    {/* <Pesquisa pegarNome={pegaNomeProduto} /> */}
                     <Filtros pegaPrecoMax={pegaPrecoMax} />
                 </div>
                 <div className='container col-9 border border-dark rounded p-3 bg-dark'>
-                    <div className="row g-3">
+                    <div className="row g-4">
                         {produtosFiltrados.map((produto) => <CardProduto key={produto.idProduto} nome={produto.nomeProduto} precoProduto={produto.valorUnitario} imagemProduto={produto.urlFoto} />)}
                     </div>
                 </div>

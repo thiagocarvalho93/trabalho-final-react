@@ -3,10 +3,8 @@ import './style.css'
 import React from 'react'
 import { FaShoppingCart, FaHome } from "react-icons/fa";
 import { ReactComponent as LO } from "../../assets/imagemlogos/LogoBranco.svg"
-import Button from 'react-bootstrap/Button';
-import { FaSearch } from 'react-icons/fa';
 import { useState } from "react";
-
+import PesquisaNome from "./Components/PesquisaNome";
 const Navbar = () => {
     const [produto, setProduto] = useState("")
 
@@ -35,7 +33,7 @@ const Navbar = () => {
                     </ul>
                     <div className="d-flex align-items-center">
                         <input className="form-control me-2 buscarProd" type="text" placeholder="Buscar produto" value={produto} onChange={(e) => setProduto(e.target.value)} />
-                        <Button className="btn" variant="primary" onClick={() => { }}><FaSearch /></Button>
+                        <PesquisaNome value={produto} />
                     </div>
                 </div>
             </div>
