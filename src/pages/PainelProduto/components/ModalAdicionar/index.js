@@ -2,17 +2,23 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { postProduto } from '../../../../services/produtoService'
 
 const ModalAdicionar = ({show, handleClose}) => {
 
     const [categorias, setCategorias] = useState([])
-    const [categoriaSelecionada, setCategoriaSelecionada] = useState('')
     const [loading, setLoading] = useState(false)
+    const [categoriaSelecionada, setCategoriaSelecionada] = useState('')
+    const [nomeProduto, setNomeProduto] = useState('')
+    const [valorUnitario, setValorUnitario] = useState(0)
+    const [estoque, setEstoque] = useState(0)
+    const [urlImagem, setUrlImagem] = useState('')
 
     const getCategorias = async () => {
         setLoading(true)
         try{
           const { data } = await axios.get('https://teg-store-api.herokuapp.com/tegloja/categorias')
+          console.log(data)
           setCategorias(data)
         } catch(e) {
           //lança uma excessão 
@@ -22,11 +28,17 @@ const ModalAdicionar = ({show, handleClose}) => {
       }
 
       useEffect(() => {
-        getCategorias();        
+        getCategorias();
       },[])
 
       const handleChange = (e) => {
         setCategoriaSelecionada(e.target.value)
+      }
+
+      const handleAdicionar = async () => {
+        const response = await postProduto(1, "teste", 100, 10.00);
+        console.log(response);
+        handleClose();
       }
 
     return (
@@ -65,7 +77,7 @@ const ModalAdicionar = ({show, handleClose}) => {
             <Button variant="secondary" onClick={handleClose}>
                 Cancelar
             </Button>
-            <Button variant="primary" onClick={handleClose}>
+            <Button variant="primary" onClick={handleAdicionar}>
                 Adicionar
             </Button>
             </Modal.Footer>

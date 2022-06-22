@@ -2,13 +2,18 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { putProduto, getProduto } from '../../../../services/produtoService'
 
 const ModalEditar = ({show, handleClose, idproduto}) => {
 
     const [categorias, setCategorias] = useState([])
     const [categoriaSelecionada, setCategoriaSelecionada] = useState('')
-    const [loading, setLoading] = useState(false)
+    const [nomeProduto, setNomeProduto] = useState('')
+    const [valorUnitario, setValorUnitario] = useState(0)
+    const [estoque, setEstoque] = useState(0)
+    const [urlImagem, setUrlImagem] = useState('')
 
+    // Consumo da API
     const getCategorias = async () => {
         setLoading(true)
         try{
@@ -19,6 +24,14 @@ const ModalEditar = ({show, handleClose, idproduto}) => {
           console.log(e)
           setLoading(false)
         }
+      }
+
+      const dadosProduto = async () => {
+        const res = await getProduto(idproduto);
+        setNomeProduto(res.data.nomeProduto)
+        setValorUnitario(res.data.valorUnitario)
+        setEstoque(res.data.quantidadeEstoque)
+        console.log(res.data)
       }
 
       useEffect(() => {

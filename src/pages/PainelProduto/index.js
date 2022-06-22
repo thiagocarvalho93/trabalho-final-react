@@ -4,32 +4,24 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import ModalAdicionar from "./components/ModalAdicionar";
 import ModalExcluir from "./components/ModalExcluir";
+import { getAllProdutos } from '../../services/produtoService'
 
 const PainelProduto = () => {
 
-    const [nomeProduto, setNomeProduto] = useState("")
     const [produtos, setProdutos] = useState([])
     const [produtoSelecionado, setProdutoSelecionado] = useState(0)
-    const [loading, setLoading] = useState(false)
-    const [modalAdicionar, setModalAdicionar] = useState(false);
     const [showAdicionar, setShowAdicionar] = useState(false);
     const [showExcluir, setShowExcluir] = useState(false);
     const [showEditar, setShowEditar] = useState(false);
-
-    const getProdutos = async () => {
-        setLoading(true)
-        try{
-            const { data } = await axios.get('https://teg-store-api.herokuapp.com/tegloja/produtos')
-            setProdutos(data)
-        } catch(e) {
-            //lança uma excessão 
-            console.log(e)
-        }
-        setLoading(false)
-      }
       
     useEffect(() => {
-    getProdutos()},[])   
+        pegarProdutos()},[showExcluir, showEditar, showAdicionar])
+
+        // Consumo da Api
+        const pegarProdutos = async () => {
+            const response = await getAllProdutos();
+            setProdutos(response.data)
+        }
 
     // Controles dos modais
     const handleCloseAdicionar = () => setShowAdicionar(false);

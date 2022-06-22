@@ -1,10 +1,13 @@
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import { deleteProduto } from '../../../../services/produtoService'
 
 const ModalExcluir = ({show, handleClose, idproduto}) => {
-
-    const deleteProduto = async () => {
-        
+    // Api
+    const handleExcluir = async () => {
+        const res = await deleteProduto(idproduto)
+        handleClose()
+        console.log(res)
     }
 
     return (
@@ -19,13 +22,12 @@ const ModalExcluir = ({show, handleClose, idproduto}) => {
                 <Button variant="secondary" onClick={handleClose}>
                     Cancelar
                 </Button>
-                <Button variant="primary" onClick={handleClose}>
+                <Button variant="primary" onClick={() => handleExcluir()}>
                     Confirmar
                 </Button>
             </Modal.Footer>
       </Modal>
     )
-
 }
 
 export default ModalExcluir
