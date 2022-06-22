@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './Components/Categorias'
-import Categorias from './Components/Categorias';
+import Categorias from './Components/Categorias'
 import './style.css';
 import banner from './../../assets/imagembanner/Banner2redimensionado.png'
 

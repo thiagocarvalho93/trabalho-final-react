@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import CardProduto from './components/CardProduto';
 import Categorias from "./components/Categorias";
 import Filtros from './components/Filtros';
-import Pesquisa from './components/Pesquisa';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
@@ -12,7 +11,7 @@ import { useLocation } from 'react-router-dom';
 const Produto = () => {
 
     const location = useLocation()
-    const [precoMax, setPrecoMax] = useState(5000)
+    const [precoMax, setPrecoMax] = useState(10000)
     const [nomeProduto, setNomeProduto] = useState("")
     const [produtos, setProdutos] = useState([])
     const [produtosFiltrados, setProdutosFiltrados] = useState([])
@@ -44,6 +43,7 @@ const Produto = () => {
             try {
                 const { data } = await axios.get(`https://teg-store-api.herokuapp.com/tegloja/categorias/${option}/produtos`)
                 console.log(data);
+                setProdutos(data)
                 setProdutosFiltrados(data)
             } catch (e) {
                 console.log(e);
@@ -52,10 +52,13 @@ const Produto = () => {
         searchCategoria();
     }, [option])
 
-    //thiago precisa ver
-    // const filtraProdutos = () => {
-    //     setProdutosFiltrados(produtos.filter((produto) => produto.valorUnitario < precoMax))
-    // }
+    useEffect(() => {
+        filtraProdutos();
+    }, [precoMax])
+
+    const filtraProdutos = () => {
+        setProdutosFiltrados(produtos.filter((produto) => produto.valorUnitario < precoMax))
+    }
 
     const pegaPrecoMax = (preco) => {
         setPrecoMax(preco);
@@ -74,11 +77,11 @@ const Produto = () => {
                 </Link>
             </div>
             <div className="m-3 mb-5 row">
-                <div className='container col-2 border border-dark rounded p-3 bg-dark text-white'>
+                <div className='container text-center col-12 col-md-2 mb-3 shadow rounded p-3 bg-light text-dark h-100'>
                     {/* <Pesquisa pegarNome={pegaNomeProduto} /> */}
                     <Filtros pegaPrecoMax={pegaPrecoMax} />
                 </div>
-                <div className='container col-9 border border-dark rounded p-3 bg-dark'>
+                <div className='container col-12 col-md-9 shadow rounded p-3 bg-light text-dark'>
                     <div className="row g-4">
                         {produtosFiltrados.map((produto) => <CardProduto key={produto.idProduto} nome={produto.nomeProduto} precoProduto={produto.valorUnitario} imagemProduto={produto.urlFoto} />)}
                     </div>

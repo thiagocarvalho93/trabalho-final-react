@@ -3,7 +3,6 @@ import api from "./api"
 const getAllProdutos = async () => {
     try{
     const response = await api.get('/produtos')
-    console.log(response);
     return response;
     } catch(error) {
         console.error(error);
@@ -13,7 +12,15 @@ const getAllProdutos = async () => {
 const getProduto = async (idProduto) => {
     try{
     const response = await api.get("/produtos/"+ idProduto)
-    console.log(response);
+    return response;
+    } catch(error) {
+        console.error(error);
+    }
+}
+
+const getProdutoByName = async (nome) => {
+    try{
+    const response = await api.get("/produtos/pesquisar?nome="+ nome)
     return response;
     } catch(error) {
         console.error(error);
@@ -30,7 +37,6 @@ const postProduto = async (idCategoria, nomeProduto, quantidadeEstoque, valorUni
             "valorUnitario": valorUnitario
           }
     )
-    console.log(response);
     return response;
     } catch(error) {
         console.error(error);
@@ -40,7 +46,6 @@ const postProduto = async (idCategoria, nomeProduto, quantidadeEstoque, valorUni
 const deleteProduto = async (idProduto) => {
     try{
     const response = await api.delete("/produtos/" + idProduto)
-    console.log(response);
     return response;
     } catch(error) {
         console.error(error);
@@ -57,7 +62,6 @@ const putProduto = async (idProduto, idCategoria, nomeProduto, quantidadeEstoque
             "valorUnitario": valorUnitario
           }
     )
-    console.log(response);
     return response;
     } catch(error) {
         console.error(error);
@@ -67,6 +71,7 @@ const putProduto = async (idProduto, idCategoria, nomeProduto, quantidadeEstoque
 export {
     getAllProdutos,
     getProduto,
+    getProdutoByName,
     postProduto,
     deleteProduto,
     putProduto

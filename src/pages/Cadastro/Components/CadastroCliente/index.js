@@ -19,17 +19,14 @@ const CadastroCliente = () => {
         }
         try {
             const { data } = await axios.get(`https://teg-store-api.herokuapp.com/tegloja/cep/${cep}`)
-
             setCep(data)
-
         } catch (e) {
 
         }
     }
-   // (cep, cpf, email, nome, numeroEndereco)
     // Consumo da Api
     const handleAdicionarClient = async () => {
-        const response = await postCliente(cep.cep,cpf, email, nome, numeroEndereco)
+        const response = await postCliente(cep.cep, cpf, email, nome, numeroEndereco)
         console.log(cep.cep);
         return response
     }

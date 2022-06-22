@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import ModalAdicionar from "./components/ModalAdicionar";
 import ModalExcluir from "./components/ModalExcluir";
 import { getAllProdutos } from '../../services/produtoService'
+import ModalEditar from "./components/ModalEditar";
 
 const PainelProduto = () => {
 
@@ -33,7 +34,7 @@ const PainelProduto = () => {
         setShowExcluir(true);
     }    
 
-    const handleShowEditar = (e, idprod) => {
+    const handleShowEditar = (idprod) => {
         setProdutoSelecionado(idprod);
         setShowEditar(true);
     }  
@@ -47,7 +48,7 @@ const PainelProduto = () => {
                 <hr />
                 <Button variant="outline-success" className="mb-3" onClick={handleShowAdicionar}>Adicionar</Button>
                 <ModalAdicionar handleClose={handleCloseAdicionar} show={showAdicionar} />
-                <Table striped bordered hover>
+                <Table striped bordered hover responsive="md">
                 <thead>
                     <tr>
                         <th>id</th>
@@ -77,7 +78,7 @@ const PainelProduto = () => {
                 </tbody>
                 </Table>
                 
-                <ModalAdicionar idproduto={produtoSelecionado} handleClose={handleCloseEditar} show={showEditar} />
+                <ModalEditar idproduto={produtoSelecionado} handleClose={handleCloseEditar} show={showEditar} />
                 <ModalExcluir idproduto={produtoSelecionado} handleClose={handleCloseExcluir} show={showExcluir}/>
 
             </form>
