@@ -41,8 +41,8 @@ const ModalAdicionar = ({show, handleClose}) => {
                     <input type="text" placeholder='Entre o nome do produto' className='form-control'/>
                 </div>
                 <div id="categoria" className="col form-outline mb-3">
-                    <select className="form-select" onChange={handleChange}>
                     <label htmlFor="categoria" className="form-label">Categoria</label>
+                    <select className="form-select" onChange={handleChange}>
                         {categorias.map((categoria) => <option key={categoria.id} value={categoria.categoria}>{categoria.categoria}</option>)}
                     </select>
                 </div>
