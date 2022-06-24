@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Home from './pages/Home';
 import Cadastro from './pages/Cadastro';
 import Contato from './pages/Contato';
@@ -12,6 +12,7 @@ import PainelProduto from './pages/PainelProduto';
 import { useState } from 'react';
 
 const Rotas = () => {
+    // A implementar com Context
     const [user, setUser] = useState(false)
 
     return(

@@ -1,8 +1,9 @@
-.d-flexBox{
-    display: flex!important;
-    flex-direction: column;
-    align-items: center;
+.d-flexBox {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
 }
-a{
-    text-decoration: none;
+
+a {
+  text-decoration: none;
 }
